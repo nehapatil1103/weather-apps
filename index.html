@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Weather Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<h1>Weather Dashboard</h1>
+
+<div class="search-box">
+<input type="text" id="cityInput"
+placeholder="Search city, village or district">
+<button id="searchBtn">Search</button>
+</div>
+
+<button id="toggleUnit">°C / °F</button>
+<button id="themeToggle">🌙</button>
+
+</header>
+
+<div id="loading" class="loading hidden">Loading weather...</div>
+<div id="error" class="error hidden"></div>
+
+
+<!-- Current Weather -->
+
+<section id="currentWeather" class="card hidden">
+
+<h2 id="cityName"></h2>
+<p id="dateTime"></p>
+
+<canvas id="weatherIcon" width="120" height="120"></canvas>
+
+<h3 id="temperature"></h3>
+<p id="condition"></p>
+
+<div class="details">
+
+<div>
+<p>Humidity</p>
+<span id="humidity"></span>
+</div>
+
+<div>
+<p>Wind</p>
+<span id="wind"></span>
+</div>
+
+<div>
+<p>Feels Like</p>
+<span id="feelsLike"></span>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h3>Air Quality Index</h3>
+
+<div class="aqi-box">
+<span id="aqiValue">--</span>
+<p id="aqiStatus"></p>
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h3>Sun Cycle</h3>
+
+<p>🌅 Sunrise: <span id="sunrise"></span></p>
+<p>🌇 Sunset: <span id="sunset"></span></p>
+
+</section>
+
+
+<h2>Hourly Forecast</h2>
+<div id="hourly" class="hourly"></div>
+
+
+<h2>5 Day Forecast</h2>
+<section id="forecast" class="forecast"></section>
+
+
+<h2>Temperature Trend</h2>
+<canvas id="tempChart"></canvas>
+
+
+<h2>Weather Radar</h2>
+<div id="map"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
